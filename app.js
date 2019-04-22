@@ -12,12 +12,14 @@ var dashboardRouter = require('./routes/dashboard');
 var aboutusRouter = require('./routes/aboutus');
 var customerRouter = require('./routes/customer');
 var movieRouter = require('./api/movie');
+var adminCustRouter = require('./api/adminCustomer');
 
 //api routes
 var authenticateRouter = require('./api/authenticate');
 var customersRouter = require('./api/customers');
 var movieRouter = require('./api/movie');
 var bookingRouter = require('./api/booking');
+var adminCustRouter = require('./api/adminCustomer');
 
 var app = express();
 app.use(cors());
@@ -61,6 +63,7 @@ app.use('/customers', customerRouter);
 app.use('/api/customers', customersRouter);
 app.use('/api/movie', movieRouter);
 app.use('/api/booking', bookingRouter);
+app.use('/api/adminCustomer', adminCustRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

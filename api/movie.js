@@ -43,7 +43,7 @@ router.get('/', function(req, res, next) {
     }
     var movieId = req.params.id;
     var movie = req.body;
-    dbService.updateMovie(movie,callback);
+    movieservice.updateMovie(movie,callback);
   });
 
 module.exports = router;

@@ -70,10 +70,10 @@ pool.getConnection(function(err, connection) {
 });
 
 };
-service.updateMovie = function(customer,callback){
+service.updateMovie = function(movie,callback){
        pool.getConnection(function(err, connection) {
       if(err) { console.log(err); callback("fail"); return; }
-      connection.query("UPDATE movie set ? WHERE id = ? ",[customer,customer.id], function(err, results) {
+      connection.query("UPDATE movie set ? WHERE id = ? ",[movie,movie.id], function(err, results) {
         if(err){
          console.log("Error Selecting : %s ",err );
          callback("fail");
